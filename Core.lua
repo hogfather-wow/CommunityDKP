@@ -369,9 +369,9 @@ function CommDKP:CheckRaidLeader()
 		 
 		 tempName, tempRank, subgroup, level, class, fileName, zone, online, isDead, role, isML, combatRole = GetRaidRosterInfo(i);
 
-		if tempName == UnitName("player") and tempRank == 2 then
+		if tempName == UnitName("player") and isML then
 			return true
-		elseif tempName == UnitName("player") and tempRank < 2 then
+		elseif tempName == UnitName("player") and not isML then
 			return false
 		end
 	end
