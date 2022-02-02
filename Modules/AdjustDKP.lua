@@ -499,7 +499,7 @@ function CommDKP:AdjustDKPTab_Create()
 	CommDKP.ConfigTab2.selectAll:Hide();
 	
 
-		-- Adjust DKP Button
+	-- Adjust DKP Button
 	CommDKP.ConfigTab2.adjustButton = self:CreateButton("TOPLEFT", CommDKP.ConfigTab2.addDKP, "BOTTOMLEFT", -1, -15, L["ADJUSTDKP"]);
 	CommDKP.ConfigTab2.adjustButton:SetSize(90,25)
 	CommDKP.ConfigTab2.adjustButton:SetScript("OnClick", function()
@@ -546,6 +546,37 @@ function CommDKP:AdjustDKPTab_Create()
 	end)
 	CommDKP.ConfigTab2.adjustButton:SetScript("OnLeave", function(self)
 		GameTooltip:Hide()
+	end)
+
+	-- Minimum DKP Button
+	CommDKP.ConfigTab2.minimumDKP = self:CreateButton("TOPLEFT", CommDKP.ConfigTab2.adjustButton, "BOTTOMLEFT", 0, -15, L["MINIMUMDKP"]);
+	CommDKP.ConfigTab2.minimumDKP:SetSize(90,25)
+	CommDKP.ConfigTab2.minimumDKP:SetScript("OnClick", function()
+		local tmpReason = curReason
+		local tmpText = CommDKP.ConfigTab2.otherReason:GetText()
+		local tmpSelect = core.SelectedData
+
+		curReason = L["OTHER"]
+		CommDKP.ConfigTab2.otherReason:SetText(L["MINIMUMDKP"])
+
+		for _, player in ipairs(CommDKP:GetTable(CommDKP_DKPTable, true)) do
+			local value = 100 - abs(player.dkp)
+			if value > 0 then
+				core.SelectedData = { player }
+				CommDKP:AdjustDKP(value)
+			end
+		end
+
+		curReason = tmpReason
+		CommDKP.ConfigTab2.otherReason:SetText(tmpText)
+		core.SelectedData = tmpSelect
+	end)
+	CommDKP.ConfigTab2.minimumDKP:SetScript("OnEnter", function(self)
+		GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+		GameTooltip:SetText(L["MINIMUMDKP"], 0.25, 0.75, 0.90, 1, true);
+		GameTooltip:AddLine(L["MINIMUMDKPTTDESC"], 1.0, 1.0, 1.0, true);
+		GameTooltip:AddLine(L["MINIMUMDKPTTWARN"], 1.0, 0, 0, true);
+		GameTooltip:Show();
 	end)
 
 	-- weekly decay Editbox
