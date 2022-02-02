@@ -33,6 +33,12 @@ local function SaveSettings()
     else
       core.DB.DKPBonus.DecayPercentage = CommDKP.ConfigTab4.default[6]:GetNumber();
     end
+    core.DB.defaults.minDKP = CommDKP.ConfigTab4.default[7]:GetNumber();
+    core.DB.defaults.maxDKP = CommDKP.ConfigTab4.default[8]:GetNumber();
+    if core.DB.defaults.minDKP > core.DB.defaults.maxDKP then
+      CommDKP.ConfigTab4.default[8]:SetNumber(core.DB.defaults.minDKP)
+      core.DB.defaults.maxDKP = core.DB.defaults.minDKP
+    end
     CommDKP.ConfigTab2.decayDKP:SetNumber(core.DB.DKPBonus.DecayPercentage);
     CommDKP.ConfigTab4.default[6]:SetNumber(core.DB.DKPBonus.DecayPercentage)
     core.DB.DKPBonus.BidTimer = CommDKP.ConfigTab4.bidTimer:GetNumber();
@@ -99,7 +105,7 @@ function CommDKP:Options()
     CommDKP.ConfigTab4.description:SetPoint("TOPLEFT", CommDKP.ConfigTab4.header, "BOTTOMLEFT", 7, -15);
     CommDKP.ConfigTab4.description:SetText("|CFFcca600"..L["DEFAULTDKPAWARDVALUES"].."|r");
   
-    for i=1, 6 do
+    for i=1, 8 do
       if WOW_PROJECT_ID == WOW_PROJECT_CLASSIC then
         CommDKP.ConfigTab4.default[i] = CreateFrame("EditBox", nil, CommDKP.ConfigTab4)
       elseif WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC then
@@ -161,7 +167,7 @@ function CommDKP:Options()
 
       if i==1 then
         CommDKP.ConfigTab4.default[i]:SetPoint("TOPLEFT", CommDKP.ConfigTab4, "TOPLEFT", 144, -84)
-      elseif i==4 then
+      elseif i==5 then
         CommDKP.ConfigTab4.default[i]:SetPoint("TOPLEFT", CommDKP.ConfigTab4.default[1], "TOPLEFT", 212, 0)
       else
         CommDKP.ConfigTab4.default[i]:SetPoint("TOP", CommDKP.ConfigTab4.default[i-1], "BOTTOM", 0, -22)
@@ -215,6 +221,14 @@ function CommDKP:Options()
     CommDKP.ConfigTab4.default[6].tooltipDescription = L["DECAYPERCENTAGETTDESC"]
     CommDKP.ConfigTab4.default[6].tooltipWarning = L["DECAYPERCENTAGETTWARN"]
 
+    CommDKP.ConfigTab4.default[7]:SetText(core.DB.defaults.minDKP)
+    CommDKP.ConfigTab4.default[7].tooltipText = L["MINIMUMDKP"]
+    CommDKP.ConfigTab4.default[7].tooltipDescription = L["MINIMUMDKPTTDESC"]
+
+    CommDKP.ConfigTab4.default[8]:SetText(core.DB.defaults.maxDKP)
+    CommDKP.ConfigTab4.default[8].tooltipText = L["MAXIMUMDKP"]
+    CommDKP.ConfigTab4.default[8].tooltipDescription = L["MAXIMUMDKPTTDESC"]
+
     --OnTimeBonus Header
     CommDKP.ConfigTab4.OnTimeHeader = CommDKP.ConfigTab4:CreateFontString(nil, "OVERLAY")
     CommDKP.ConfigTab4.OnTimeHeader:SetFontObject("CommDKPSmallRight");
@@ -256,9 +270,21 @@ function CommDKP:Options()
     CommDKP.ConfigTab4.DecayFooter:SetPoint("LEFT", CommDKP.ConfigTab4.default[6], "RIGHT", -15, -1);
     CommDKP.ConfigTab4.DecayFooter:SetText("%")
 
+    -- Minimum DKP
+    CommDKP.ConfigTab4.MinimumDKP = CommDKP.ConfigTab4:CreateFontString(nil, "OVERLAY")
+    CommDKP.ConfigTab4.MinimumDKP:SetFontObject("CommDKPSmallRight");
+    CommDKP.ConfigTab4.MinimumDKP:SetPoint("RIGHT", CommDKP.ConfigTab4.default[7], "LEFT", 0, 0);
+    CommDKP.ConfigTab4.MinimumDKP:SetText(L["MINIMUMDKP"]..": ")
+
+    -- Maximum DKP
+    CommDKP.ConfigTab4.MaximumDKP = CommDKP.ConfigTab4:CreateFontString(nil, "OVERLAY")
+    CommDKP.ConfigTab4.MaximumDKP:SetFontObject("CommDKPSmallRight");
+    CommDKP.ConfigTab4.MaximumDKP:SetPoint("RIGHT", CommDKP.ConfigTab4.default[8], "LEFT", 0, 0);
+    CommDKP.ConfigTab4.MaximumDKP:SetText(L["MAXIMUMDKP"]..": ")
+
     -- Default Minimum Bids Container Frame
     CommDKP.ConfigTab4.DefaultMinBids = CreateFrame("Frame", nil, CommDKP.ConfigTab4);
-    CommDKP.ConfigTab4.DefaultMinBids:SetPoint("TOPLEFT", CommDKP.ConfigTab4.default[3], "BOTTOMLEFT", -130, -52)
+    CommDKP.ConfigTab4.DefaultMinBids:SetPoint("TOPLEFT", CommDKP.ConfigTab4.default[4], "BOTTOMLEFT", -130, -52)
     CommDKP.ConfigTab4.DefaultMinBids:SetSize(420, 410);
 
     CommDKP.ConfigTab4.DefaultMinBids.description = CommDKP.ConfigTab4.DefaultMinBids:CreateFontString(nil, "OVERLAY")
@@ -1340,7 +1366,7 @@ function CommDKP:Options()
   CommDKP.ConfigTab4.submitSettings:SetSize(90,25)
   CommDKP.ConfigTab4.submitSettings:SetScript("OnClick", function()
     if core.IsOfficer == true then
-      for i=1, 6 do
+      for i=1, 8 do
         if not tonumber(CommDKP.ConfigTab4.default[i]:GetText()) then
           StaticPopupDialogs["OPTIONS_VALIDATION"] = {
             text = L["INVALIDOPTIONENTRY"].." "..CommDKP.ConfigTab4.default[i].tooltipText..". "..L["PLEASEUSENUMS"],

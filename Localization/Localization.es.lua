@@ -495,7 +495,8 @@ if GetLocale() == "esES" or GetLocale() == "esMX" then
     MAXGTMIN = "Maximum value must be > = minimum or 0!",
     MAXIMUMBID = "Oferta máxima",
     MAXIMUMBIDTTDESC = "Esta es una oferta máxima permitida de línea dura. Si un jugador intenta hacer una oferta superior a este valor, su oferta será denegada. Establezca a 0 si no desea tener un máximo.",
-    MAXIMUMROLL = "Rollo Máximo",
+    MAXIMUMDKP = "DKP cap", -- NEEDS TRANSLATIONS
+    MAXIMUMDKPTTDESC = "The DKP cap determines the DKP upper limit. Once players have reached this limit, they will no longer be credited with DKP. Set to 0 if you do not wish to have a DKP cap.", -- NEEDS TRANSLATIONS    MAXIMUMROLL = "Rollo Máximo",
     MAXIMUMROLLTTDESC = "Establezca el rollo máximo que se utilizará. Déjalo en blanco para usar los jugadores DKP máximo como rollo máximo.",
     MAXIMUMROLLTTWARN = "Solo déjelo en blanco para DKP máximo si \"Usar porcentaje\" está desmarcado. Si está marcado, use 100%.",
     MELEEDPS = "Cuerpo a cuerpo DPS",

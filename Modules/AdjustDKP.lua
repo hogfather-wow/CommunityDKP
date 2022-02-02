@@ -548,48 +548,53 @@ function CommDKP:AdjustDKPTab_Create()
 		GameTooltip:Hide()
 	end)
 
-	-- Minimum DKP Button
-	CommDKP.ConfigTab2.minimumDKP = self:CreateButton("TOPLEFT", CommDKP.ConfigTab2.adjustButton, "BOTTOMLEFT", 0, -15, L["MINIMUMDKP"]);
-	CommDKP.ConfigTab2.minimumDKP:SetSize(90,25)
-	CommDKP.ConfigTab2.minimumDKP:SetScript("OnClick", function()
-		StaticPopupDialogs["MINIMUMDKP"] = {
-			text = L["AREYOUSURESETMINDKP"],
-			button1 = L["YES"],
-			button2 = L["NO"],
-			OnAccept = function()
-				local tmpReason = curReason
-				local tmpText = CommDKP.ConfigTab2.otherReason:GetText()
-				local tmpSelect = core.SelectedData
+	if core.DB.defaults.minDKP > 0 then
+		-- Minimum DKP Button
+		CommDKP.ConfigTab2.minimumDKP = self:CreateButton("TOPLEFT", CommDKP.ConfigTab2.adjustButton, "BOTTOMLEFT", 0, -15, L["MINIMUMDKP"]);
+		CommDKP.ConfigTab2.minimumDKP:SetSize(90,25)
+		CommDKP.ConfigTab2.minimumDKP:SetScript("OnClick", function()
+			StaticPopupDialogs["MINIMUMDKP"] = {
+				text = L["AREYOUSURESETMINDKP"],
+				button1 = L["YES"],
+				button2 = L["NO"],
+				OnAccept = function()
+					local tmpReason = curReason
+					local tmpText = CommDKP.ConfigTab2.otherReason:GetText()
+					local tmpSelect = core.SelectedData
 
-				curReason = L["OTHER"]
-				CommDKP.ConfigTab2.otherReason:SetText(L["MINIMUMDKP"])
+					curReason = L["OTHER"]
+					CommDKP.ConfigTab2.otherReason:SetText(L["MINIMUMDKP"])
 
-				for _, player in ipairs(CommDKP:GetTable(CommDKP_DKPTable, true)) do
-					local value = 100 - abs(player.dkp)
-					if value > 0 then
-						core.SelectedData = { player }
-						CommDKP:AdjustDKP(value)
+					for _, player in ipairs(CommDKP:GetTable(CommDKP_DKPTable, true)) do
+						local value = core.DB.defaults.minDKP - abs(player.dkp)
+						if value > 0 then
+							core.SelectedData = { player }
+							CommDKP:AdjustDKP(value)
+						end
 					end
-				end
 
-				curReason = tmpReason
-				CommDKP.ConfigTab2.otherReason:SetText(tmpText)
-				core.SelectedData = tmpSelect
-			end,
-			timeout = 0,
-			whileDead = true,
-			hideOnEscape = true,
-			preferredIndex = 3,
-		}
-		StaticPopup_Show ("MINIMUMDKP")
-	end)
-	CommDKP.ConfigTab2.minimumDKP:SetScript("OnEnter", function(self)
-		GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
-		GameTooltip:SetText(L["MINIMUMDKP"], 0.25, 0.75, 0.90, 1, true);
-		GameTooltip:AddLine(L["MINIMUMDKPTTDESC"], 1.0, 1.0, 1.0, true);
-		GameTooltip:AddLine(L["MINIMUMDKPTTWARN"], 1.0, 0, 0, true);
-		GameTooltip:Show();
-	end)
+					curReason = tmpReason
+					CommDKP.ConfigTab2.otherReason:SetText(tmpText)
+					core.SelectedData = tmpSelect
+				end,
+				timeout = 0,
+				whileDead = true,
+				hideOnEscape = true,
+				preferredIndex = 3,
+			}
+			StaticPopup_Show ("MINIMUMDKP")
+		end)
+		CommDKP.ConfigTab2.minimumDKP:SetScript("OnEnter", function(self)
+			GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+			GameTooltip:SetText(L["MINIMUMDKP"], 0.25, 0.75, 0.90, 1, true);
+			GameTooltip:AddLine(L["MINIMUMDKPTTDESC"], 1.0, 1.0, 1.0, true);
+			GameTooltip:AddLine(L["MINIMUMDKPTTWARN"], 1.0, 0, 0, true);
+			GameTooltip:Show();
+		end)
+		CommDKP.ConfigTab2.minimumDKP:SetScript("OnLeave", function(self)
+			GameTooltip:Hide()
+		end)
+	end
 
 	-- weekly decay Editbox
 
@@ -1134,7 +1139,7 @@ function CommDKP:AdjustDKPTab_Create()
 		CommDKP.ConfigTab2.RaidTimerContainer.TimerWarning = CommDKP.ConfigTab2.RaidTimerContainer:CreateFontString(nil, "OVERLAY")
 	    CommDKP.ConfigTab2.RaidTimerContainer.TimerWarning:SetFontObject("CommDKPTinyLeft");
 	    CommDKP.ConfigTab2.RaidTimerContainer.TimerWarning:SetWidth(180)
-	    CommDKP.ConfigTab2.RaidTimerContainer.TimerWarning:SetPoint("BOTTOMLEFT", CommDKP.ConfigTab2.RaidTimerContainer, "BOTTOMLEFT", 10, 10);
+	    CommDKP.ConfigTab2.RaidTimerContainer.TimerWarning:SetPoint("BOTTOMLEFT", CommDKP.ConfigTab2.RaidTimerContainer, "BOTTOMLEFT", 10, 0);
 	    CommDKP.ConfigTab2.RaidTimerContainer.TimerWarning:SetText("|CFFFF0000"..L["TIMERWARNING"].."|r")
 	    RaidTimerPopout_Create()
 end

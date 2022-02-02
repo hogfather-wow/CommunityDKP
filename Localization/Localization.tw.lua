@@ -494,7 +494,8 @@ if GetLocale() == "zhTW" then
     MAXGTMIN = "最大值必須> =最小值或0！",
     MAXIMUMBID = "最高出價",
     MAXIMUMBIDTTDESC = "這是允許的最高出價。 如果玩家試圖出價高於此值，則其出價將被拒絕。 如果您不希望有最大值，則設置為0。",
-    MAXIMUMROLL = "最大滾動",
+    MAXIMUMDKP = "DKP cap", -- NEEDS TRANSLATIONS
+    MAXIMUMDKPTTDESC = "The DKP cap determines the DKP upper limit. Once players have reached this limit, they will no longer be credited with DKP. Set to 0 if you do not wish to have a DKP cap.", -- NEEDS TRANSLATIONS    MAXIMUMROLL = "最大滾動",
     MAXIMUMROLLTTDESC = "設置要使用的最大卷數。保留空白可使用玩家最大DKP作為最大擲骰數。",
     MAXIMUMROLLTTWARN = "如果未選中“使用百分比”，則最大DKP僅保留空白。如果選中，請使用100％。",
     MELEEDPS = "近戰DPS",

@@ -565,7 +565,8 @@ if GetLocale() == "ruRU" then
     MAXGTMIN = "Максимальное значение должно быть> = минимум или 0!",
     MAXIMUMBID = "Максимальная ставка",
     MAXIMUMBIDTTDESC = "Это максимально допустимая максимальная ставка. Если игрок попытается сделать ставку выше этого значения, его ставка будет отклонена. Установите 0, если вы не хотите иметь максимум.",
-    MAXIMUMROLL = "Максимальный /roll",
+    MAXIMUMDKP = "DKP cap", -- NEEDS TRANSLATIONS
+    MAXIMUMDKPTTDESC = "The DKP cap determines the DKP upper limit. Once players have reached this limit, they will no longer be credited with DKP. Set to 0 if you do not wish to have a DKP cap.", -- NEEDS TRANSLATIONS    MAXIMUMROLL = "Максимальный /roll",
     MAXIMUMROLLTTDESC = "Задает максимальное значение для /roll. Оставьте пустым чтобы использовать DKP игрока в качестве максимального значения.",
     MAXIMUMROLLTTWARN = "Оставить пустым только если \"Использовать %\" не выбран. Если выбрано, используйте 100%.",
     MELEEDPS = "МДД",

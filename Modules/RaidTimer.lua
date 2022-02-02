@@ -38,8 +38,14 @@ function CommDKP:AwardPlayer(name, amount)
 
 	if search then
 		path = CommDKP:GetTable(CommDKP_DKPTable, true)[search[1][1]]
-		path.dkp = path.dkp + amount
-		path.lifetime_gained = path.lifetime_gained + amount;
+		local maxDKP = core.DB.defaults.maxDKP
+		if maxDKP and path.dkp + amount > maxDKP then
+			path.lifetime_gained = path.lifetime_gained + maxDKP - path.dkp;
+			path.dkp = maxDKP
+		else
+			path.dkp = path.dkp + amount
+			path.lifetime_gained = path.lifetime_gained + amount;
+		end
 	end
 end
 

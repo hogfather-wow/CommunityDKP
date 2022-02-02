@@ -494,7 +494,8 @@ if GetLocale() == "koKR" then
     MAXGTMIN = "최대 값은> = 최소 또는 0이어야합니다!",
     MAXIMUMBID = "최대 입찰가",
     MAXIMUMBIDTTDESC = "허용 된 최대 입찰가입니다. 플레이어가이 값보다 높은 가격으로 입찰을 시도하면 입찰이 거부됩니다. 최대 값을 원하지 않으면 0으로 설정하십시오.",
-    MAXIMUMROLL = "최대 롤",
+    MAXIMUMDKP = "DKP cap", -- NEEDS TRANSLATIONS
+    MAXIMUMDKPTTDESC = "The DKP cap determines the DKP upper limit. Once players have reached this limit, they will no longer be credited with DKP. Set to 0 if you do not wish to have a DKP cap.", -- NEEDS TRANSLATIONS    MAXIMUMROLL = "최대 롤",
     MAXIMUMROLLTTDESC = "사용할 최대 롤을 설정하십시오. 플레이어 최대 DKP를 최대 롤로 사용하려면 비워 둡니다.",
     MAXIMUMROLLTTWARN = "\"사용률\"가 체크되어 있지 않으면 max DKP를 비워 두십시오. 확인 된 경우 100 %를 사용하십시오.",
     MELEEDPS = "근접 DPS",

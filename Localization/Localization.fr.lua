@@ -542,7 +542,8 @@ if GetLocale() == "frFR" then
     MAXGTMIN = "La valeur maximale doit être >= au minimum ou 0 !",
     MAXIMUMBID = "Enchère maximum",
     MAXIMUMBIDTTDESC = "Enchère maximum autorisée. Si un joueur tente d'enchérir au dessus de cette valeur, son enchère sera refusée. Réglez sur 0 si vous ne souhaitez pas avoir un max.",
-    MAXIMUMROLL = "Jet maximum",
+    MAXIMUMDKP = "DKP cap", -- NEEDS TRANSLATIONS
+    MAXIMUMDKPTTDESC = "The DKP cap determines the DKP upper limit. Once players have reached this limit, they will no longer be credited with DKP. Set to 0 if you do not wish to have a DKP cap.", -- NEEDS TRANSLATIONS    MAXIMUMROLL = "Jet maximum",
     MAXIMUMROLLTTDESC = "Définissez le jet maximum à utiliser. Laissez le champ vide pour utiliser le maximum de DKP du joueur en tant que jet maximal.",
     MAXIMUMROLLTTWARN = "Ne laisser vide seulement si \"Utiliser le pourcentage\" est décoché. Si cette case est cochée, utilisez 100%.",
     MELEEDPS = "DPS de mêlée",

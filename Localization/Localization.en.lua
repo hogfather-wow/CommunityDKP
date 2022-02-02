@@ -440,6 +440,8 @@ core.L = {
   MAXGTMIN = "Maximum value must be > = minimum or 0!",
   MAXIMUMBID = "Maximum Bid",
   MAXIMUMBIDTTDESC = "This is a hardline maximum bid allowed. If a player attempts to bid higher than this value, their bid will be denied. Set to 0 if you do not wish to have a max.",
+  MAXIMUMDKP = "DKP cap",
+  MAXIMUMDKPTTDESC = "The DKP cap determines the DKP upper limit. Once players have reached this limit, they will no longer be credited with DKP. Set to 0 if you do not wish to have a DKP cap.",
   MAXIMUMROLL = "Maximum Roll",
   MAXIMUMROLLTTDESC = "Set the maximum roll to be used. Leave blank to use players max DKP as max roll.",
   MAXIMUMROLLTTWARN = "Only leave blank for max DKP if \"Use Percentage\" is unchecked. If it is checked, use 100%.",

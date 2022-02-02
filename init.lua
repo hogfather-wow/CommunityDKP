@@ -975,6 +975,15 @@ function CommDKP:InitializeCommDKPDB(dbTable)
 			end
 		end
 	end
+
+	if not dbTable.defaults.maxDKP then
+		dbTable.defaults.maxDKP = 0
+	end
+
+	if not dbTable.defaults.minDKP then
+		dbTable.defaults.minDKP = 0
+	end
+
 	if not dbTable.raiders then dbTable.raiders = {} end
 	if not dbTable.MinBidBySlot or not dbTable.MinBidBySlot.Head then
 		dbTable.MinBidBySlot = {
