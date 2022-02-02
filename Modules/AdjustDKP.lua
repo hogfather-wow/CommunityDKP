@@ -552,24 +552,36 @@ function CommDKP:AdjustDKPTab_Create()
 	CommDKP.ConfigTab2.minimumDKP = self:CreateButton("TOPLEFT", CommDKP.ConfigTab2.adjustButton, "BOTTOMLEFT", 0, -15, L["MINIMUMDKP"]);
 	CommDKP.ConfigTab2.minimumDKP:SetSize(90,25)
 	CommDKP.ConfigTab2.minimumDKP:SetScript("OnClick", function()
-		local tmpReason = curReason
-		local tmpText = CommDKP.ConfigTab2.otherReason:GetText()
-		local tmpSelect = core.SelectedData
+		StaticPopupDialogs["MINIMUMDKP"] = {
+			text = L["AREYOUSURESETMINDKP"],
+			button1 = L["YES"],
+			button2 = L["NO"],
+			OnAccept = function()
+				local tmpReason = curReason
+				local tmpText = CommDKP.ConfigTab2.otherReason:GetText()
+				local tmpSelect = core.SelectedData
 
-		curReason = L["OTHER"]
-		CommDKP.ConfigTab2.otherReason:SetText(L["MINIMUMDKP"])
+				curReason = L["OTHER"]
+				CommDKP.ConfigTab2.otherReason:SetText(L["MINIMUMDKP"])
 
-		for _, player in ipairs(CommDKP:GetTable(CommDKP_DKPTable, true)) do
-			local value = 100 - abs(player.dkp)
-			if value > 0 then
-				core.SelectedData = { player }
-				CommDKP:AdjustDKP(value)
-			end
-		end
+				for _, player in ipairs(CommDKP:GetTable(CommDKP_DKPTable, true)) do
+					local value = 100 - abs(player.dkp)
+					if value > 0 then
+						core.SelectedData = { player }
+						CommDKP:AdjustDKP(value)
+					end
+				end
 
-		curReason = tmpReason
-		CommDKP.ConfigTab2.otherReason:SetText(tmpText)
-		core.SelectedData = tmpSelect
+				curReason = tmpReason
+				CommDKP.ConfigTab2.otherReason:SetText(tmpText)
+				core.SelectedData = tmpSelect
+			end,
+			timeout = 0,
+			whileDead = true,
+			hideOnEscape = true,
+			preferredIndex = 3,
+		}
+		StaticPopup_Show ("MINIMUMDKP")
 	end)
 	CommDKP.ConfigTab2.minimumDKP:SetScript("OnEnter", function(self)
 		GameTooltip:SetOwner(self, "ANCHOR_RIGHT");

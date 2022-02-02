@@ -171,6 +171,7 @@ if GetLocale() == "deDE" then
     AREYOUSURE = "Sind Sie sicher, dass Sie geben möchten",
     AREYOUSUREBROADCAST = "Möchten Sie die Einstellungen für den DKP-Modus wirklich übertragen?",
     AREYOUSUREREASSIGN = "Möchten Sie die Zuordnung wirklich ändern?",
+    AREYOUSURESETMINDKP = "Minimum DKP für entsprechende Spieler setzen?",
     ARTIFICIALINFLATION = "Künstliche Inflation",
     ARTINFLATTTDESC = "Punkte, die jedem Spieler OBEN auf die DKP gegeben werden, die unter ihnen aufgeteilt und verteilt wird. Dieser Wert wird zu ihrem verdienten DKP addiert, nachdem der Bankwert geteilt wurde.",
     AUTOAWARD = "Automatische Boss Kill DKP",

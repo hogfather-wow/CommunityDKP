@@ -170,6 +170,7 @@ if GetLocale() == "zhTW" then
     AREYOUSURE = "你確定你願意",
     AREYOUSUREBROADCAST = "您確定要廣播DKP模式設置嗎？",
     AREYOUSUREREASSIGN = "您確定要重新分配嗎",
+    AREYOUSURESETMINDKP = "Set minimum DKP for corresponding players?",
     ARTIFICIALINFLATION = "人工通脹",
     ARTINFLATTTDESC = "分配給每個玩家的DKP的TOP積分，在各個玩家之間分配。銀行價值除後，此值將添加到他們的收入DKP中。",
     AUTOAWARD = "汽車獎DKP",

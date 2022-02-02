@@ -232,6 +232,7 @@ if GetLocale() == "ruRU" then
     AREYOUSURE = "Вы уверены что хотите добавить",
     AREYOUSUREBROADCAST = "Вы уверены, что хотите поделиться настройками режимов DKP?",
     AREYOUSUREREASSIGN = "Вы уверены, что хотите переназначить",
+    AREYOUSURESETMINDKP = "Set minimum DKP for corresponding players?",
     ARTIFICIALINFLATION = "Искусственная инфляция",
     ARTINFLATTTDESC = "Очки, которые распределяются между каждым игроком таблицы DKP, которые разделены и распределены между ними. Это значение добавляется к их заработанному DKP ПОСЛЕ того, как банковская стоимость делится.",
     AUTOAWARD = "Авто-начисление DKP",

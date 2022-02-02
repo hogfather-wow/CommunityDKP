@@ -218,6 +218,7 @@ if GetLocale() == "frFR" then
     AREYOUSURE = "Êtes-vous sûr de vouloir donner",
     AREYOUSUREBROADCAST = "Êtes-vous sûr de vouloir diffuser les paramètres du mode DKP ?",
     AREYOUSUREREASSIGN = "Êtes-vous sûr de vouloir réaffecter",
+    AREYOUSURESETMINDKP = "Set minimum DKP for corresponding players?",
     ARTIFICIALINFLATION = "Inflation artificielle",
     ARTINFLATTTDESC = "Points à donner à chaque joueur SUR LE DKP divisé et réparti entre eux. Cette valeur est ajoutée à leur DKP gagné APRÈS que la valeur mise en banque soit divisée.",
     AUTOAWARD = "Prix ​​Auto DKP",

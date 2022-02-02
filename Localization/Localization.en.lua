@@ -158,6 +158,7 @@ core.L = {
   AREYOUSURE = "Are you sure you'd like to give",
   AREYOUSUREBROADCAST = "Are you sure you'd like to broadcast DKP mode settings?",
   AREYOUSUREREASSIGN = "Are you sure you'd like to reassign",
+  AREYOUSURESETMINDKP = "Set minimum DKP for corresponding players?",
   ARTIFICIALINFLATION = "Artificial Inflation",
   ARTINFLATTTDESC = "Points to give to each player ON TOP of the DKP that is divided and distributed among them. This value is added to their earned DKP AFTER the banked value is divided.",
   AUTOAWARD = "Auto Award DKP",

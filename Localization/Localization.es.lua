@@ -171,6 +171,7 @@ if GetLocale() == "esES" or GetLocale() == "esMX" then
     AREYOUSURE = "¿Estás seguro de que te gustaría dar",
     AREYOUSUREBROADCAST = "¿Está seguro de que desea transmitir la configuración del modo DKP?",
     AREYOUSUREREASSIGN = "¿Estás seguro de que te gustaría reasignar",
+    AREYOUSURESETMINDKP = "Set minimum DKP for corresponding players?",
     ARTIFICIALINFLATION = "Inflación Artificial",
     ARTINFLATTTDESC = "Puntos para dar a cada jugador EN LA PARTE SUPERIOR del DKP que se divide y distribuye entre ellos. Este valor se agrega a su DKP ganado DESPUÉS de dividir el valor acumulado.",
     AUTOAWARD = "Auto Award DKP",
