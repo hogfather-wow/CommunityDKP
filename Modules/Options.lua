@@ -35,7 +35,7 @@ local function SaveSettings()
     end
     core.DB.defaults.minDKP = CommDKP.ConfigTab4.default[7]:GetNumber();
     core.DB.defaults.maxDKP = CommDKP.ConfigTab4.default[8]:GetNumber();
-    if core.DB.defaults.minDKP > core.DB.defaults.maxDKP then
+    if core.DB.defaults.maxDKP ~= 0 and core.DB.defaults.minDKP > core.DB.defaults.maxDKP then
       CommDKP.ConfigTab4.default[8]:SetNumber(core.DB.defaults.minDKP)
       core.DB.defaults.maxDKP = core.DB.defaults.minDKP
     end
