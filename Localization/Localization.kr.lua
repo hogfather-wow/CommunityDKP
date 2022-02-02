@@ -170,7 +170,7 @@ if GetLocale() == "koKR" then
     AREYOUSURE = "정말로주고 싶습니까?",
     AREYOUSUREBROADCAST = "DKP 모드 설정을 브로드 캐스트 하시겠습니까?",
     AREYOUSUREREASSIGN = "재 할당 하시겠습니까?",
-    AREYOUSURESETMINDKP = "Set minimum DKP for corresponding players?",
+    AREYOUSURESETMINDKP = "Set minimum DKP for corresponding players?", -- NEEDS TRANSLATIONS
     ARTIFICIALINFLATION = "인공 인플레이션",
     ARTINFLATTTDESC = "DKP에서 각 플레이어에게 나누어주는 포인트. 이 값은 뱅킹 된 값이 분할 된 후 획득 한 DKP에 추가됩니다.",
     AUTOAWARD = "자동 수상 DKP",
@@ -514,8 +514,8 @@ if GetLocale() == "koKR" then
     MINBIDVALUESSENT = "보낸 최소 입찰가",
     MINIMUMBID = "최소 입찰가",
     MINIMUMDKP = "최소 DKP",
-    MINIMUMDKPTTDESC = "Sets the DKP to the minimum DKP for the players in the DKP table whose DKP is lower than the minimum DKP.",
-    MINIMUMDKPTTWARN = "This entry will be broadcasted to all online players in your guild.",
+    MINIMUMDKPTTDESC = "Sets the DKP to the minimum DKP for the players in the DKP table whose DKP is lower than the minimum DKP.", -- NEEDS TRANSLATIONS
+    MINIMUMDKPTTWARN = "This entry will be broadcasted to all online players in your guild.", -- NEEDS TRANSLATIONS
     MINIMUMROLL = "최소 롤",
     MINIMUMROLLTTDESC = "사용할 최소 롤을 설정하십시오.",
     MINUTE = "분",

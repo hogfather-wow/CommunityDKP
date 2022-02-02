@@ -218,7 +218,7 @@ if GetLocale() == "frFR" then
     AREYOUSURE = "Êtes-vous sûr de vouloir donner",
     AREYOUSUREBROADCAST = "Êtes-vous sûr de vouloir diffuser les paramètres du mode DKP ?",
     AREYOUSUREREASSIGN = "Êtes-vous sûr de vouloir réaffecter",
-    AREYOUSURESETMINDKP = "Set minimum DKP for corresponding players?",
+    AREYOUSURESETMINDKP = "Set minimum DKP for corresponding players?", -- NEEDS TRANSLATIONS
     ARTIFICIALINFLATION = "Inflation artificielle",
     ARTINFLATTTDESC = "Points à donner à chaque joueur SUR LE DKP divisé et réparti entre eux. Cette valeur est ajoutée à leur DKP gagné APRÈS que la valeur mise en banque soit divisée.",
     AUTOAWARD = "Prix ​​Auto DKP",
@@ -562,8 +562,8 @@ if GetLocale() == "frFR" then
     MINBIDVALUESSENT = "Valeurs d'enchère minimum envoyées",
     MINIMUMBID = "Enchère minimum",
     MINIMUMDKP = "DKP minimum",
-    MINIMUMDKPTTDESC = "Sets the DKP to the minimum DKP for the players in the DKP table whose DKP is lower than the minimum DKP.",
-    MINIMUMDKPTTWARN = "This entry will be broadcasted to all online players in your guild.",
+    MINIMUMDKPTTDESC = "Sets the DKP to the minimum DKP for the players in the DKP table whose DKP is lower than the minimum DKP.", -- NEEDS TRANSLATIONS
+    MINIMUMDKPTTWARN = "This entry will be broadcasted to all online players in your guild.", -- NEEDS TRANSLATIONS
     MINIMUMROLL = "Jet minimum",
     MINIMUMROLLTTDESC = "Définissez le jet minimum à utiliser.",
     MINUTE = "minute",

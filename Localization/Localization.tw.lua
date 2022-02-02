@@ -170,7 +170,7 @@ if GetLocale() == "zhTW" then
     AREYOUSURE = "你確定你願意",
     AREYOUSUREBROADCAST = "您確定要廣播DKP模式設置嗎？",
     AREYOUSUREREASSIGN = "您確定要重新分配嗎",
-    AREYOUSURESETMINDKP = "Set minimum DKP for corresponding players?",
+    AREYOUSURESETMINDKP = "Set minimum DKP for corresponding players?", -- NEEDS TRANSLATIONS
     ARTIFICIALINFLATION = "人工通脹",
     ARTINFLATTTDESC = "分配給每個玩家的DKP的TOP積分，在各個玩家之間分配。銀行價值除後，此值將添加到他們的收入DKP中。",
     AUTOAWARD = "汽車獎DKP",
@@ -514,8 +514,8 @@ if GetLocale() == "zhTW" then
     MINBIDVALUESSENT = "最低出價已發送",
     MINIMUMBID = "最低競標價格",
     MINIMUMDKP = "最低 DKP",
-    MINIMUMDKPTTDESC = "Sets the DKP to the minimum DKP for the players in the DKP table whose DKP is lower than the minimum DKP.",
-    MINIMUMDKPTTWARN = "This entry will be broadcasted to all online players in your guild.",
+    MINIMUMDKPTTDESC = "Sets the DKP to the minimum DKP for the players in the DKP table whose DKP is lower than the minimum DKP.", -- NEEDS TRANSLATIONS
+    MINIMUMDKPTTWARN = "This entry will be broadcasted to all online players in your guild.", -- NEEDS TRANSLATIONS
     MINIMUMROLL = "最小滾動",
     MINIMUMROLLTTDESC = "設置要使用的最小捲紙。",
     MINUTE = "分鐘",

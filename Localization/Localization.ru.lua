@@ -232,7 +232,7 @@ if GetLocale() == "ruRU" then
     AREYOUSURE = "Вы уверены что хотите добавить",
     AREYOUSUREBROADCAST = "Вы уверены, что хотите поделиться настройками режимов DKP?",
     AREYOUSUREREASSIGN = "Вы уверены, что хотите переназначить",
-    AREYOUSURESETMINDKP = "Set minimum DKP for corresponding players?",
+    AREYOUSURESETMINDKP = "Set minimum DKP for corresponding players?", -- NEEDS TRANSLATIONS
     ARTIFICIALINFLATION = "Искусственная инфляция",
     ARTINFLATTTDESC = "Очки, которые распределяются между каждым игроком таблицы DKP, которые разделены и распределены между ними. Это значение добавляется к их заработанному DKP ПОСЛЕ того, как банковская стоимость делится.",
     AUTOAWARD = "Авто-начисление DKP",
@@ -586,8 +586,8 @@ if GetLocale() == "ruRU" then
     MINBIDVALUESSENT = "Настройки минимальных ставок переданы",
     MINIMUMBID = "Минимальная ставка",
     MINIMUMDKP = "Минимальный DKP",
-    MINIMUMDKPTTDESC = "Sets the DKP to the minimum DKP for the players in the DKP table whose DKP is lower than the minimum DKP.",
-    MINIMUMDKPTTWARN = "This entry will be broadcasted to all online players in your guild.",
+    MINIMUMDKPTTDESC = "Sets the DKP to the minimum DKP for the players in the DKP table whose DKP is lower than the minimum DKP.", -- NEEDS TRANSLATIONS
+    MINIMUMDKPTTWARN = "This entry will be broadcasted to all online players in your guild.", -- NEEDS TRANSLATIONS
     MINIMUMROLL = "Минимальный /roll",
     MINIMUMROLLTTDESC = "Задает минимальное значение для /roll.",
     MINUTE = "минут",

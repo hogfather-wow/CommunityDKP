@@ -171,7 +171,7 @@ if GetLocale() == "esES" or GetLocale() == "esMX" then
     AREYOUSURE = "¿Estás seguro de que te gustaría dar",
     AREYOUSUREBROADCAST = "¿Está seguro de que desea transmitir la configuración del modo DKP?",
     AREYOUSUREREASSIGN = "¿Estás seguro de que te gustaría reasignar",
-    AREYOUSURESETMINDKP = "Set minimum DKP for corresponding players?",
+    AREYOUSURESETMINDKP = "Set minimum DKP for corresponding players?", -- NEEDS TRANSLATIONS
     ARTIFICIALINFLATION = "Inflación Artificial",
     ARTINFLATTTDESC = "Puntos para dar a cada jugador EN LA PARTE SUPERIOR del DKP que se divide y distribuye entre ellos. Este valor se agrega a su DKP ganado DESPUÉS de dividir el valor acumulado.",
     AUTOAWARD = "Auto Award DKP",
@@ -515,8 +515,8 @@ if GetLocale() == "esES" or GetLocale() == "esMX" then
     MINBIDVALUESSENT = "Valores mínimos de oferta enviados",
     MINIMUMBID = "Oferta mínima",
     MINIMUMDKP = "DKP minima",
-    MINIMUMDKPTTDESC = "Sets the DKP to the minimum DKP for the players in the DKP table whose DKP is lower than the minimum DKP.",
-    MINIMUMDKPTTWARN = "This entry will be broadcasted to all online players in your guild.",
+    MINIMUMDKPTTDESC = "Sets the DKP to the minimum DKP for the players in the DKP table whose DKP is lower than the minimum DKP.", -- NEEDS TRANSLATIONS
+    MINIMUMDKPTTWARN = "This entry will be broadcasted to all online players in your guild.", -- NEEDS TRANSLATIONS
     MINIMUMROLL = "Rollo Mínimo",
     MINIMUMROLLTTDESC = "Establezca el rollo mínimo que se utilizará.",
     MINUTE = "minuto",
