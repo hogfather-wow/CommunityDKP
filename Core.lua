@@ -22,7 +22,7 @@ core.faction = UnitFactionGroup("player")
 API_CLASSES = LOCALIZED_CLASS_NAMES_MALE;
 
 core.CColors = {
-	["UNKNOWN"] = { r = 0.627, g = 0.627, b = 0.627, hex = "A0A0A0" }
+	["UNKNOWN"] = { r = 0.627, g = 0.627, b = 0.627, hex = "A0A0A0A0" }
 }
 core.classes = {}
 
